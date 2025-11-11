@@ -18,9 +18,10 @@ services:
       - /tmp
       - /var/run/postgresql
     volumes:
-      - ${POSTGRES_DATA_PATH}:/var/lib/postgresql/data
+      - ${POSTGRES_DATA_PATH}:/var/lib/postgresql
     environment:
       - TZ=Asia/Shanghai
+      - PGDATA=/var/lib/postgresql/18/main
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
